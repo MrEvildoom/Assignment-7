@@ -1,12 +1,14 @@
 .pos 0x100
 main:
-  # initialize the stack pointer
-  # call the copy procedure
+  ld $stackBtm, r5  # r5 = stackptr
+  gpc $6, r6        # r6 = pc + 6
+  j copy            # jmp to copy
   halt
 
 .pos 0x200
 copy:
   # save the return address
+
   # int dst[2];
   # int i = 0;
   # while (src[i] != 0) {
