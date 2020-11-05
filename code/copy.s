@@ -1,12 +1,14 @@
 .pos 0x100
-main:
-  ld $stackBtm, r5  # r5 = stackptr
-  gpc $6, r6        # r6 = pc + 6
-  j copy            # jmp to copy
-  halt
+main:           ld   $stackBtm, r5    # r5 = stackptr
+                gpc  $6, r6           # r6 = pc + 6
+                j    copy             # jmp to copy
+                halt
+
 
 .pos 0x200
-copy:
+copy:           deca r5               # allocate callee part of copy's frame
+                st   r6, 0x0(r5)      # save ra on stack
+
   # save the return address
 
   # int dst[2];
