@@ -1,0 +1,12 @@
+.pos 0x1000
+code:
+  halt
+
+.pos 0x2000
+src:
+    .long 0x1
+    .long 0x0
+
+.pos 0x3000
+stack:
+    .long 0x0
