@@ -1,2 +1,2 @@
 language = "c"
-run = "c q4vuln.c"
+run = "gcc -std=gnu11 -g -o q4vuln code/q4vuln.c"

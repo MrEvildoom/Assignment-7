@@ -4,37 +4,38 @@
 #include <unistd.h>
 
 struct string {
-  int length;
+  int len;
   char *str;
 };
 
 struct string *str1 = malloc(sizeof(struct string));
-str1.length = 30;
-str1.str = malloc(sizeof(char[str1.length]));
-str1.str = "Welcome! Please enter a name:";
+// struct string *str1 = {30, malloc(sizeof(30))};
+str1.len = 30;
+// str1->str = malloc(sizeof(char[str1.len]));
+str1->str = "Welcome! Please enter a name:";
 
-struct string *str2 = malloc(sizeof(struct string));
-*str2.length = 11;
-*str2.str = malloc(sizeof(char[str2.length]));
-*str2.str = "Good luck,";
+// struct string *str2 = malloc(sizeof(struct string));
+// *str2.length = 11;
+// *str2.str = malloc(sizeof(char[str2.length]));
+// *str2.str = "Good luck,";
 
-struct string *str3 = malloc(sizeof(struct string));
-*str3.length = 43;
-*str3.str = malloc(sizeof(char[str3.length]));
-*str3.str = "The secret phrase is \"squeamish ossifrage\"";
+// struct string *str3 = malloc(sizeof(struct string));
+// *str3.length = 43;
+// *str3.str = malloc(sizeof(char[str3.length]));
+// *str3.str = "The secret phrase is \"squeamish ossifrage\"";
 
 void print(struct string *str) {
-  write(1, *str->str, *str->length);
+  write(1, str->str, str->len);
 }
 
-void proof() {
-  write(1, *str3->str, *str->length);
-}
+// void proof() {
+//   write(1, *str3->str, *str->len);
+// }
 
 void main() {
   char buf[128];
   print(&str1);
-  print(&str2);
+  // print(&str2);
 }
 
 /*
