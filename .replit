@@ -1,2 +1,2 @@
 language = "c"
-run = ""
+run = "c q4vuln.c"
