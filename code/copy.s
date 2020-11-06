@@ -8,6 +8,7 @@ main:           ld   $stackBtm, r5    # r5 = stackptr
 .pos 0x200
 copy:           deca r5               # allocate callee part of copy's frame
                 st   r6, 0x0(r5)      # save ra on stack
+                # testing
 
   # int dst[2];
   # int i = 0;
