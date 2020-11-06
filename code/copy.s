@@ -9,8 +9,6 @@ main:           ld   $stackBtm, r5    # r5 = stackptr
 copy:           deca r5               # allocate callee part of copy's frame
                 st   r6, 0x0(r5)      # save ra on stack
 
-  # save the return address
-
   # int dst[2];
   # int i = 0;
   # while (src[i] != 0) {
@@ -38,8 +36,8 @@ stackTop:     .long 0x0
               .long 0x0
               .long 0x0
               .long 0x0
-              .long 0x0
-              .long 0x0
-              .long 0x0
-              .long 0x0
+              .long 0x0 # i
+              .long 0x0 # dst[0]
+              .long 0x0 # dst[1]
+              .long 0x0 # return address
 stackBtm      .long 0x0
