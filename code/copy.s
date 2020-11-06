@@ -28,7 +28,20 @@ end_copy:        ld   $0x0, r3            # r3 = 0
                  j    0x0(r6)             
 .pos 0x2000
 src:             .long 0x1                # jump to return address
-                 .long 0x0                
+                 .long 0x1
+                 .long 0x2010
+                 .long 0x0
+                 .long 0x0000ffff     # r0 = -1
+                 .long 0xffff01ff     # r1 = -1
+                 .long 0xffffff02     # r2 = -1
+                 .long 0xffffffff
+                 .long 0x03ffffff     # r3 = -1
+                 .long 0xff04ffff     # r4 = -1
+                 .long 0xffff05ff     # r5 = -1
+                 .long 0xffffff06     # r6 = -1
+                 .long 0xffffffff
+                 .long 0x07ffffff     # r7 = -1
+                 .long 0xfff00000
 .pos 0x3000
 stackTop:        .long 0x0                
                  .long 0x0                
